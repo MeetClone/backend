@@ -12,7 +12,7 @@ import register from './routes/register.js';
 import errorHandler from './middleware/errorHandler.js'
 
 
-const app = express();
+const app = express()
 
 // middleware for logging purposes
 app.use(logger('tiny'));
