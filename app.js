@@ -15,7 +15,7 @@ import errorHandler from './middleware/errorHandler.js'
 const app = express()
 
 // middleware for logging purposes
-app.use(logger('tiny'));
+app.use(logger('tiny'))
 
 // middleware for Access Control Allow Origin, to be called before cors
 app.use(credentials);
