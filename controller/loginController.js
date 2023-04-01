@@ -33,7 +33,7 @@ export const loginPOSTController = async (req, res) => {
                 const accessToken = Jwt.sign(
                     {"email":user.email},
                     process.env.ACCESS_TOKEN_SECRET,
-                    {expiresIn: '30s'}
+                    {expiresIn: '1h'}
                 )
                 const refreshToken = Jwt.sign(
                     {"email":user.email},

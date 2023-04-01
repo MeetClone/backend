@@ -32,7 +32,7 @@ export const refreshTokenController = async (req, res) => {
             const newaccessToken = Jwt.sign(
                 {"email":decoded.email},
                 process.env.ACCESS_TOKEN_SECRET,
-                {expiresIn: '30s'}
+                {expiresIn: '1h'}
             );
             res.json({ newaccessToken });
         }

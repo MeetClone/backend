@@ -12,7 +12,7 @@ import register from './routes/register.js';
 import errorHandler from './middleware/errorHandler.js';
 import refresh from './routes/refresh.js';
 import logout from './routes/logout.js'
-
+import room from './routes/room.js'
 
 const app = express()
 
@@ -39,8 +39,12 @@ app.use('/login', login);
 app.use('/register', register);
 app.use('/refresh', refresh);
 app.use('/logout', logout);
-// protected routes
+
+// verifyJWT middleware
 app.use(verifyJWT);
+
+// protected routes
+app.use('/room', room);
 
 
 // middleware to handle errors
