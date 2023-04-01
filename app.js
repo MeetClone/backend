@@ -9,7 +9,9 @@ import corsOptions from './config/corsOptions.js';
 import credentials from './middleware/credentials.js';
 import login from './routes/login.js';
 import register from './routes/register.js';
-import errorHandler from './middleware/errorHandler.js'
+import errorHandler from './middleware/errorHandler.js';
+import refresh from './routes/refresh.js';
+import logout from './routes/logout.js'
 
 
 const app = express()
@@ -35,7 +37,8 @@ app.use(cookieParser());
 // public routes
 app.use('/login', login);
 app.use('/register', register);
-
+app.use('/refresh', refresh);
+app.use('/logout', logout);
 // protected routes
 app.use(verifyJWT);
 

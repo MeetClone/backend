@@ -12,15 +12,15 @@ datasource db {
 
 // Users Schema
 model Users {
-  userId      Int          @id @unique @default(autoincrement())
-  email       String       @unique
-  password    Bytes
-  createdAt   DateTime     @default(now())
-  lastLogin   DateTime     @default(now())
+  userId       Int          @id @unique @default(autoincrement())
+  email        String       @unique
+  password     Bytes
+  createdAt    DateTime     @default(now())
+  lastLogin    DateTime     @default(now())
   refreshToken Bytes?
-  UserMeetMap UserMeetMap?
-  Message     Message?
-  MeetData    MeetData[]
+  UserMeetMap  UserMeetMap?
+  Message      Message?
+  MeetData     MeetData[]
 }
 
 // MeetData Schema
