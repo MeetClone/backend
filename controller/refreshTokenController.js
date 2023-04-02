@@ -29,7 +29,7 @@ export const refreshTokenController = async (req, res) => {
             if(!user){return res.sendStatus(403);} //forbidden
             
             if(user.refreshToken.toString() !== refreshToken){return res.sendStatus(408);}
-            const newaccessToken = Jwt.sign(
+            const accessToken = Jwt.sign(
                 {"email":decoded.email},
                 process.env.ACCESS_TOKEN_SECRET,
                 {expiresIn: '1h'}

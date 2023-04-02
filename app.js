@@ -13,7 +13,7 @@ import errorHandler from './middleware/errorHandler.js';
 import refresh from './routes/refresh.js';
 import logout from './routes/logout.js'
 import room from './routes/room.js'
-
+import twofa from './routes/2fa.js'
 const app = express()
 
 // middleware for logging purposes
@@ -44,6 +44,7 @@ app.use('/logout', logout);
 app.use(verifyJWT);
 
 // protected routes
+app.use('/twofactor', twofa);
 app.use('/room', room);
 
 
